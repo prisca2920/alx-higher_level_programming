@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+num = " "
 for i in range(97, 123):
-    print(chr(i), end= "")
+    num = chr(i)
+    print("{}" .format(num), end= "")
