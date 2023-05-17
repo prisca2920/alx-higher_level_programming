@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    import sys
+    from sys import argv
     suum = 0
-    for i in range(len(sys.argv) - 1):
-        suum += int(sys.argv[i + 1])
-        print("{}" .format(suum))
+    for i in range(len(argv) - 1):
+        suum += int(argv[i + 1])
+    print("{}".format(suum))
