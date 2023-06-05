@@ -1,0 +1,38 @@
+"""module defining addition of an integer"""
+
+	>>> add_integer = __import__('0-add_integer').a
+	"""test with a positive no"""
+	>>> add_integer(5, 4)
+	9
+
+	""" one positive one negative"""
+	>>> add_integer(5, -4)
+	1
+
+	""" two negative numbers """
+	>>> add_integer(-5, -4)
+	-9
+
+	"""with one float and an int"""
+	>>> add_integer(4.5, 5)
+	9
+
+	"""two float numbers"""
+	>>> add_integer(4.5, 5.5)
+	9
+
+	"""an int and a string"""
+	>>> add_integer('hello', 5)
+	TraceBack Error...
+
+	"""two strings"""
+	>>> add_integer('hello' 'world')
+	traceback error
+
+	"""a string and a float"""
+	>>> add_integer(4.5, 'hello')
+	TraceBack Error
+
+	"""one argument"""
+	>>> add_integer(5)
+	TraceBack Error
