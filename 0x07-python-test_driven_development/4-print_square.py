@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ draws a # square """
 
+
 def print_square(size):
     """ draws a # square """
 
@@ -11,4 +12,6 @@ def print_square(size):
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
     else:
-
+        for i in range(size):
+            [print("#", end="") for j in range(size)]
+            print("")
