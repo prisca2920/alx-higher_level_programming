@@ -49,12 +49,7 @@ class Rectangle:
         """gives the reader a visual representation """
 
         if self.__width == 0 or self.__height == 0:
-            print(" ")
+            return ("")
         else:
-            dgrm = []
-            for i in range(self.__height):
-                [dgrm.append('#') for j in range(self.__width)]
-
-                if i != self.__height - 1:
-                    dgrm.append("\n")
-            return ("".join(dgrm))
+            return ("\n".join(["".join(["#" for i in range(self.__width)])
+                    for j in range(self.__height)]))
