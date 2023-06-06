@@ -1,7 +1,6 @@
 """module defining addition of an integer"""
 
-	>>> add_integer = __import__('0-add_integer').a
-	"""test with a positive no"""
+	>>> add_integer = __import__('0-add_integer').add_integer
 	>>> add_integer(5, 4)
 	9
 
@@ -23,16 +22,19 @@
 
 	"""an int and a string"""
 	>>> add_integer('hello', 5)
-	TraceBack Error...
+	Traceback (most recent call last):
+        TypeError: a must be an integer
 
 	"""two strings"""
 	>>> add_integer('hello' 'world')
-	traceback error
+	Traceback (most recent call last):
+        TypeError: a must be an integer
 
 	"""a string and a float"""
 	>>> add_integer(4.5, 'hello')
-	TraceBack Error
+	Traceback (most recent call last):
+        TypeError: b must be an integer
 
 	"""one argument"""
 	>>> add_integer(5)
-	TraceBack Error
+	103
