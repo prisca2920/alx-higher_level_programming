@@ -1,0 +1,30 @@
+""" module explaining how to print a name""""
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+	>>> say_my_name('mat', 'oti')
+	My name is mat oti
+
+	"""one argument """
+	>>> say_my_name('mat')
+	My name is mat
+
+	"""a str and an int"""
+	>>> say_my_name(0, 'mat')
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	"""two ints """
+	>>> say_my_name(0, 1)
+	Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+	""" a float and str"""
+	>>> say_my_name(4.5, 'mat')
+	Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+	"""a negative no and str"""
+	>>> say_my_name (-2, 'mat')
+	Traceback (most recent call last):
+        TypeError: first_name must be a string
