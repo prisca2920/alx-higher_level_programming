@@ -54,8 +54,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         else:
-            return ("\n".join(["".join([self.print_symbol for i in range(self.__width)])
-                    for j in range(self.__height)]))
+            r = []
+            for i in range(self.__height):
+                [r.append(str(self.print_symbol)) for j in range(self.__width)]
+                if i != self.__height - 1:
+                    r.append("\n")
+        return ("".join(r))
 
     def __repr__(self):
         """ draws a string rep """
