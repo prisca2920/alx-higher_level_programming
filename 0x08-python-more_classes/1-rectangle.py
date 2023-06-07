@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-""" defines class rectangle """
+""" defines a class rectangle """
 
 
 class Rectangle:
     """ defines class rectangle """
 
     def __init__(self, width=0, height=0):
-        """ the class constructor """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """ defines width of the rect """
         return self.__width
 
     @width.setter
@@ -21,11 +19,11 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            return self.__width
 
     @property
     def height(self):
-        """ defines height of the rect """
         return self.__height
 
     @height.setter
@@ -34,4 +32,5 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            return self.__height
