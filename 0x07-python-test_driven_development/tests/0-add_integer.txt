@@ -38,3 +38,9 @@
 	"""one argument"""
 	>>> add_integer(5)
 	103
+
+	>>> add_integer(-1)
+	97
+
+	>>> add_integer (10.5)
+	108
