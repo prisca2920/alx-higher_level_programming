@@ -3,4 +3,6 @@
 
 
 def lookup(obj):
-    count = []
+    """returns a list of att and methods """
+
+    return(dir(obj))
