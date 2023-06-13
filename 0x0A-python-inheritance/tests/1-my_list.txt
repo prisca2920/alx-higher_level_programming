@@ -1,0 +1,17 @@
+""" sorting a list in ascending order"""
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	[1]
+
+	>>> my_list.append(2)
+        [1, 2]
+
+	>>> my_list.append(3)
+        [3]
+
+	#implementing the sort
+	>>>my_list.print_sorted()
+	>>>print(my_list)
+	[1, 2, 3]
