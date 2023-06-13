@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
     """ the new child class """
     def __init__(self, width, height):
         super().__init__
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
+        self.__width = width
         self.integer_validator("height", height)
+        self.__height = height
