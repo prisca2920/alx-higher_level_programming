@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" inherits from a class"""
+""" inherits from a class rectangle"""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
