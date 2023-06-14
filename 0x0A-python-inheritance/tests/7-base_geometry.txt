@@ -1,23 +1,23 @@
 """module testing integer validation"""
 
+	
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("len", 12)
 
-	>>>BaseGeometry = __import__('7-base_geometry').BaseGeometry
-	>>>bg = BaseGeomentry()
-	>>>bg.integer_validator("len", 12)
-
-	>>>>>>bg.integer_validator("width", 49)
+	>>> bg.integer_validator("width", 49)
 
 	#two strings
-	>>>bg.integer_validator("name","john")
+	>>> bg.integer_validator("name","john")
 	Traceback (most recent call last):
         TypeError: name must be an integer
 
 	#with a negative
-	>>>bg.integer_validator("age", -4)
+	>>> bg.integer_validator("age", -4)
         Traceback (most recent call last):
         ValueError: age must be greater than 0
 
 	#with 0
-	>>>bg.integer_validator("age", 0)
+	>>> bg.integer_validator("age", 0)
         Traceback (most recent call last):
         ValueError: age must be greater than 0
