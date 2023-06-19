@@ -20,8 +20,8 @@ class Rectangle(Base):
             return self.__width
 
         @width.setter
-        """sets the width"""
         def width(self, value):
+            """sets the width"""
             if type(value) is not int:
                 raise TypeError("width must be an integer")
             if value <= 0:
@@ -29,12 +29,10 @@ class Rectangle(Base):
             self.__width = value
 
         @property
-        """gets height of rect"""
         def height(self):
             return self.__height
 
         @height.setter
-        """sets how to retrieve height"""
         def height(self, value):
             if type(value) is not int:
                 raise TypeError("height must be an integer")
@@ -48,30 +46,25 @@ class Rectangle(Base):
             return self.__x
 
         @x.setter
-        """sets how to retrieve it"""
         def x(self, value):
             if value < 0:
                 raise ValueError("x must be >= 0")
             self.__x = value
 
         @property
-        """returns y coordinates of a rect"""
         def y(self):
             return self.__y
 
         @y.setter
-        """sets how to retrieve it"""
         def y(self, value):
             if value < 0:
                 raise ValueError("y must be >= 0")
             self.__y = value
 
         def area(self):
-            """defines the area of a rect"""
             return self.__width * self.__height
 
         def display(self):
-            """draws a rect using #"""
             for y in range(self.y):
                 print("")
             for i in range(self.__height):
@@ -80,4 +73,9 @@ class Rectangle(Base):
                 for j in range(self.__width):
                     print("#", end="")
                 print()
+
+        def __str__(self):
+            """updates the str method of a rect"""
+            return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
+{self.__width}/{self.__height}"
 
