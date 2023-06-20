@@ -86,3 +86,18 @@ class Rectangle(Base):
         """updates the str method of a rect"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """supports args and keyword args"""
+        count = len(args)
+        if count > 0:
+            self.id = args[0]
+        if count > 1:
+            self.width = args[1]
+        if count > 2:
+            self.height = args[2]
+        if count > 3:
+            self.x = args[3]
+        if count > 4:
+            self.y = args[4]
+
