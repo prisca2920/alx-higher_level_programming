@@ -14,75 +14,75 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-        @property
-        def width(self):
-            """gets width of rect"""
-            return self.__width
+    @property
+    def width(self):
+        """gets width of rect"""
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            """sets the width"""
-            if type(value) is not int:
-                raise TypeError("width must be an integer")
-            if value <= 0:
-                raise ValueError("width must be > 0")
-            self.__width = value
+    @width.setter
+    def width(self, value):
+        """sets the width"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-        @property
-        def height(self):
-            return self.__height
+    @property
+    def height(self):
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            if type(value) is not int:
-                raise TypeError("height must be an integer")
-            if value <= 0:
-                raise ValueError("height must be > 0")
-            self.__height = value
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-        @property
-        def x(self):
-            """returns the x coordinates of a rect"""
-            return self.__x
+    @property
+    def x(self):
+        """returns the x coordinates of a rect"""
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            """ sets x instance"""
-            if type(value) is not int:
-                raise TypeError("x must be an integer")
-            if value < 0:
-                raise ValueError("x must be >= 0")
-            self.__x = value
+    @x.setter
+    def x(self, value):
+        """ sets x instance"""
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        @property
-        def y(self):
-            """property getter y"""
-            return self.__y
+    @property
+    def y(self):
+        """property getter y"""
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            """y setter"""
-            if type(value) is not int:
-                raise TypeError("y must be an integer")
-            if value < 0:
-                raise ValueError("y must be >= 0")
-            self.__y = value
+    @y.setter
+    def y(self, value):
+        """y setter"""
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
-        def area(self):
-            """area of the rectangle"""
-            return self.width * self.height
+    def area(self):
+        """area of the rectangle"""
+        return self.width * self.height
 
-        def display(self):
-            for y in range(self.y):
-                print("")
-            for i in range(self.__height):
-                for x in range(self.x):
-                    print(" ", end="")
-                for j in range(self.__width):
-                    print("#", end="")
-                print()
+    def display(self):
+        for y in range(self.y):
+            print("")
+        for i in range(self.height):
+            for x in range(self.x):
+                print(" ", end="")
+            for j in range(self.width):
+                print("#", end="")
+            print()
 
-        def __str__(self):
-            """updates the str method of a rect"""
-            return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
+    def __str__(self):
+        """updates the str method of a rect"""
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
