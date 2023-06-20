@@ -78,4 +78,3 @@ class Rectangle(Base):
             """updates the str method of a rect"""
             return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
-
