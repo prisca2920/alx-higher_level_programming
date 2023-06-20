@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """defines the first class base """
 import json
+import csv
+import os
 
 
 class Base:
