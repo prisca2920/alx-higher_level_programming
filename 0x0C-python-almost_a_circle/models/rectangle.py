@@ -34,7 +34,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -90,7 +90,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """supports args and keyword args"""
         if args and len(args) != 0:
-            the_args = ['id', 'width', 'height', 'x','y']
+            the_args = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, the_args[i], args[i])
 
