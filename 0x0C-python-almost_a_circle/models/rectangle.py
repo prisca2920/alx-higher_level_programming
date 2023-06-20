@@ -47,22 +47,30 @@ class Rectangle(Base):
 
         @x.setter
         def x(self, value):
+            """ sets x instance"""
+            if type(value) is not int:
+                raise TypeError("x must be an integer")
             if value < 0:
                 raise ValueError("x must be >= 0")
             self.__x = value
 
         @property
         def y(self):
+            """property getter y"""
             return self.__y
 
         @y.setter
         def y(self, value):
+            """y setter"""
+            if type(value) is not int:
+                raise TypeError("y must be an integer")
             if value < 0:
                 raise ValueError("y must be >= 0")
             self.__y = value
 
         def area(self):
-            return self.__width * self.__height
+            """area of the rectangle"""
+            return self.width * self.height
 
         def display(self):
             for y in range(self.y):
