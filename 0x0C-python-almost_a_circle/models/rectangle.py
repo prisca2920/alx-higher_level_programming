@@ -70,7 +70,7 @@ class Rectangle(Base):
 
     def area(self):
         """area of the rectangle"""
-        return self.width * self.height
+        return self.__width * self.__height
 
     def display(self):
         for y in range(self.y):
@@ -87,17 +87,13 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """supports args and keyword args"""
-        count = len(args)
-        if count > 0:
-            self.id = args[0]
-        if count > 1:
-            self.width = args[1]
-        if count > 2:
-            self.height = args[2]
-        if count > 3:
-            self.x = args[3]
-        if count > 4:
-            self.y = args[4]
+        if args and len(args) != 0:
+            the_args = ['id', 'width', 'height', 'x','y']
+            for i in range(len(args)):
+                setattr(self, the_args[i], args[i])
 
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
