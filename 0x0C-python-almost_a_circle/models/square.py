@@ -10,7 +10,7 @@ class Square(Rectangle):
         self.x = x
         self.y = y
         self.id = None
-        super.()__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """returns str rep of a square"""
