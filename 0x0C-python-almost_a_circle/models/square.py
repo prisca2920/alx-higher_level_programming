@@ -28,6 +28,7 @@ class Square(Rectangle):
         self.__height = value
 
     def update(self, *args, **kwargs):
+        """deals with arguments and key value"""
         if args and len(args) != 0:
             the_args = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
@@ -36,3 +37,11 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """updates the dict representation of sq"""
+        return {'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
