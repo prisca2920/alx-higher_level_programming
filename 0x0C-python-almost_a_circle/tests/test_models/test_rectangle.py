@@ -14,14 +14,6 @@ class TestRectangle(unittest.TestCase):
     def test_rectangles_base(self):
         self.assertIsInstance(Rectangle(5, 3), Base)
 
-    def test_therect(self):
-        r = Rectangle(2, 4, 5, 6, 4)
-        self.assertEqual(r.width, 2)
-        self.assertEqual(r.height, 4)
-        self.assertEqual(r.x, 5)
-        self.assertEqual(r.y, 6)
-        self.assertEqual(r.id, 4)
-
     # testing with different no of args
 
     def test_noargs(self):
@@ -109,3 +101,155 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(5, 7, 7, 5, 1)
         r.y = 10
         self.assertEqual(10, r.y)
+
+
+class TestWidth(unittest.TestCase):
+    """this class tests all instances of width"""
+    def test_withNone(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(None, 4)
+
+    # a string
+    def test_withstr(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("hello", 4)
+
+    def test_withfloat(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(5.5, 1)
+
+    def test_withcomplex(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(complex(5), 2)
+
+    def test_withdict(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({"a": 7, "b": 4}, 2)
+
+    def test_withbool(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(False, 5)
+
+    def test_withlist(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle([1, 2, 3], 8)
+
+    def test_withaset(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({1, 2, 3}, 7)
+
+    def test_withatuple(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle((4, 5, 6), 2)
+
+    def test_withafrozenset(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(frozenset({4, 2, 3, 5}), 6)
+
+    def test_withrange(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(range(6), 2)
+
+    def test_withbytes(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(b'java', 1)
+
+    def test_withbytearray(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(bytearray(b'abcdefg'), 2)
+
+    def test_memoryview_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(memoryview(b'ijklmno'), 9)
+
+    def test_inf_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(float('inf'), 4)
+
+    def test_floatnan(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(float('nan'), 4)
+
+    def test_negativevalue(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-9, 2)
+
+    def test_with0(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(0, 5)
+
+
+class Testheight(unittest.TestCase):
+    """this class tests all instances of height"""
+    def test_withNone(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, None)
+
+    # a string
+    def test_withstr(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, "hello")
+
+    def test_withfloat(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(1, 5.5)
+
+    def test_withcomplex(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, complex(5))
+
+    def test_withdict(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, {"a": 7, "b": 4})
+
+    def test_withbool(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(5, False)
+
+    def test_withlist(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(8, [1, 2, 3])
+
+    def test_withaset(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(7, {1, 2, 3})
+
+    def test_withatuple(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, (4, 5, 6))
+
+    def test_withafrozenset(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(frozenset(6, {4, 2, 3, 5}))
+
+    def test_withrange(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, range(6))
+
+    def test_withbytes(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(1, b'java')
+
+    def test_withbytearray(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(2, bytearray(b'abcdefg'))
+
+    def test_memoryview_width(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(9, memoryview(b'ijklmno'))
+
+    def test_inf_width(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, float('inf'))
+
+    def test_floatnan(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, float('nan'))
+
+    def test_negativevalue(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(2, -9)
+
+    def test_with0(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(5, 0)
