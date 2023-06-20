@@ -16,11 +16,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """converts python obj to json str"""
-        if list_dictionaries is None or len(list_dictionaries) is 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -39,7 +39,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of json str rep"""
-        if json_string is None or len(json_string) is 0:
+        if json_string is None or len(json_string) == 0:
             return '[]'
         else:
             return json.loads(json_string)
@@ -68,5 +68,5 @@ class Base:
                 dicts = cls.from_json_string(text)
 
                 for i in dicts:
-                    instances.append(cls.create(**dictionary))
+                    instances.append(cls.create(**i))
         return instances
