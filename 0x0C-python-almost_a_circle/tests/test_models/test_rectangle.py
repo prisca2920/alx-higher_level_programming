@@ -253,3 +253,6 @@ class Testheight(unittest.TestCase):
     def test_with0(self):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(5, 0)
+
+if __name__ == "__main__":
+    unittest.main()
