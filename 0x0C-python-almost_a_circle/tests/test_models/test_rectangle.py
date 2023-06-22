@@ -220,7 +220,7 @@ class Testheight(unittest.TestCase):
 
     def test_withafrozenset(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(frozenset(6, {4, 2, 3, 5}))
+            Rectangle(6, frozenset({4, 2, 3, 5}))
 
     def test_withrange(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
