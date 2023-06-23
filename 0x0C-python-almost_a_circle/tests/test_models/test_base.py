@@ -7,7 +7,7 @@ import json
 import inspect
 
 
-class test_base(unittest.TestCase):
+class TestBaseMethods(unittest.TestCase):
     """ tests the class base"""
 
     def test_idarg(self):
