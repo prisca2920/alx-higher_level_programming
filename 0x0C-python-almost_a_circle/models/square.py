@@ -1,4 +1,4 @@
-#!/usr/vin/python3
+#!/usr/bin/python3
 """class square that inherits from rect"""
 from models.rectangle import Rectangle
 
@@ -18,17 +18,22 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """defines size of the square"""
+        """defines size of square"""
         return self.__width
 
     @size.setter
     def size(self, value):
-        """returns the width of sq"""
+        """Sets the value for size"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
         self.__height = value
 
     def update(self, *args, **kwargs):
         """deals with arguments and key value"""
+
         if args and len(args) != 0:
             the_args = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
@@ -36,10 +41,11 @@ class Square(Rectangle):
 
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                seattr(self, key, value)
 
     def to_dictionary(self):
-        """updates the dict representation of sq"""
+        """updates the dict rep of sq"""
+
         return {'id': self.id,
                 'size': self.size,
                 'x': self.x,
