@@ -40,7 +40,7 @@ class Square(Rectangle):
 
         else:
             for key, value in kwargs.items():
-                seattr(self, key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """updates the dict rep of sq"""

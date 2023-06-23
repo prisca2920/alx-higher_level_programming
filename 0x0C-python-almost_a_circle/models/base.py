@@ -22,8 +22,12 @@ class Base:
         """converts python obj to json str"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+
+        if (type(list_dictionaries) != list or not
+                all(type(i) == dict for i in list_dictionaries)):
+            raise TypeError("list_dictionaries must be a list of dictionaries")
+
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -39,10 +43,10 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of json str rep"""
-        if json_string is None or len(json_string) == 0:
-            return '[]'
-        else:
-            return json.loads(json_string)
+        if not json_string:
+            return []
+
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
