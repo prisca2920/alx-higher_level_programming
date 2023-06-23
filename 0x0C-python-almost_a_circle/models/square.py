@@ -33,7 +33,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """deals with arguments and key value"""
-
         if args and len(args) != 0:
             the_args = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
