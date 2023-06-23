@@ -9,7 +9,6 @@ import inspect
 
 class TestBaseMethods(unittest.TestCase):
     """ tests the class base"""
-
     def test_idarg(self):
         b = Base()
         self.assertEqual(1, b.id)
