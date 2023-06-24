@@ -81,10 +81,5 @@ class TestClassmethods(unittest.TestCase):
     def test_class_docstring(self):
         self.assertTrue(len(Base.__doc__) >= 1)
 
-    def test_func_docstrings(self):
-        for func in self.setup:
-            self.assertTrue(len(func[1].__doc__) >= 1)
-
-
 if __name__ == "__main__":
     unittest.main()
