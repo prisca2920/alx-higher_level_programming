@@ -139,5 +139,6 @@ class TestSquare_size(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(0, 2)
 
+
 if __name__ == "__main__":
     unittest.main()
