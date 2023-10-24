@@ -3,4 +3,5 @@
 
 
 class Square:
+    """ creating an empty class"""
     pass
