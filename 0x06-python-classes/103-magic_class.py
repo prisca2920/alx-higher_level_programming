@@ -6,7 +6,7 @@ import math
 class MagicClass:
     """creates a magic class"""
 
-    def __init__(self, radius=None):
+    def __init__(self, radius=0):
         """initializes the radius"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
