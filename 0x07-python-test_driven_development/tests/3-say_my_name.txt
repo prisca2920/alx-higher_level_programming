@@ -1,0 +1,70 @@
+"""tests a func that prints 2 names"""
+
+#importing the func
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+#two str
+>>> say_my_name('ann', 'mathew')
+My name is ann mathew
+
+#str and int
+>>> say_my_name('ann', 5)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+#str and negative
+>>> say_my_name('ann', -5)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+#str and float
+>>> say_my_name('ann', 5.4)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+#str and list
+>>> say_my_name('ann', [])
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+#str and  dict
+>>> say_my_name('ann', {})
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+#testing first name
+
+#str and int
+>>> say_my_name(5, 'ann')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+#str and negative
+>>> say_my_name(-5, 'ann')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+#str and float
+>>> say_my_name(5.4, 'ann')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+#str and list
+>>> say_my_name([], 'ann')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+#str and  dict
+>>> say_my_name({}, 'ann')
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+#no args
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
