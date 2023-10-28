@@ -1,0 +1,87 @@
+"""tests a func that adds two ints"""
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+#two ints
+>>> add_integer(4, 5)
+9
+
+#one negative and int
+>>> add_integer(-4, 5)
+1
+
+#two negatives
+>>> add_integer(-4, -5)
+-9
+
+#one arg
+>>> add_integer(4)
+102
+
+#float and int
+>>> add_integer(4.4, 5)
+9
+
+#two floats
+>>> add_integer(4.4, 5.4)
+9
+
+#str and int
+>>> add_integer('Hello', 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+#two str
+>>> add_integer('Hello', 'word')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+#str and float
+>>> add_integer('Hello', 5.4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+#str and a negative
+>>> add_integer('Hello', -5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+#ints and str b
+>>> add_integer(5, 'hello')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#negative and str b
+>>> add_integer(-5, 'Hello')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#float and str b
+>>> add_integer(5.4, 'Hello')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#testing overflow
+>>> add_integer(5, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+#testing overflow
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+#testing Nan values
+>>> add_integer(float('Nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+#testing Nan values
+>>> add_integer(2, float('Nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+#No argument
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
