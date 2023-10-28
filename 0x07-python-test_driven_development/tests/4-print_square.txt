@@ -1,0 +1,63 @@
+"""tests the square size"""
+
+#importing
+>>> print_square = __import__('4-print_square').print_square
+
+#testing with ints
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(2)
+##
+##
+
+#testing with a str
+>>> print_square('hello')
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+#testng with a float
+>>> print_square(4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+# a float less that zero
+>>> print_square(-4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+#no less than 0
+>>> print_square(-4)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+
+#with a str
+>>> print_square([2,3])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+#with a dict
+>>> print_square({})
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+#with no arg
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+#none as arg
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
