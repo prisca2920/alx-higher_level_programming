@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Max integer - Unittest"""
 import unittest
+max_integer = __import__('6-max_integer').max_integer
 
 
 class test_max_integer(unittest.TestCase):
@@ -70,10 +71,11 @@ class test_max_integer(unittest.TestCase):
         lst = ''
         self.assertEqual(max_integer(lst), None)
 
-    def test_positive_ints(self):
-        """Test arranged positive ints"""
-        lst = [1, 2, 3, 4]
-        self.assertEqual(max_integer(lst), 4)
+    def test_dict_as_list(self):
+        """empty dict"""
+        lst = {}
+        self.assertEqual(max_integer(lst), None)
+
 
 if __name__ == '__main__':
     unittest.main()
