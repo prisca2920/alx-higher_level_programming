@@ -1,0 +1,53 @@
+"""tests a func that prints 2 new lines after . ? :"""
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation('Fine?')
+Fine?
+<BLANKLINE>
+
+#with . and space at the end
+>>> text_indentation('Fine.    ')
+Fine.
+<BLANKLINE>
+
+#using spaces and . between text
+>>> text_indentation('     Fine.  Now.  ')
+Fine.
+<BLANKLINE>
+Now.
+<BLANKLINE>
+
+#spaces at the beginning
+>>> text_indentation('    Fine.')
+Fine.
+<BLANKLINE>
+
+#all of them combined
+>>> text_indentation("Yes. How are you: Mary?")
+Yes.
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+Mary?
+<BLANKLINE>
+
+#no argument
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+#int argument
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+#a dict argument
+>>> text_indentation({1: 'james'})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+#None as an argument
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
