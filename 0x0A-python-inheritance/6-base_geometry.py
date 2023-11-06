@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('6-base_geometry').BaseGeometry
+"""creating an empty class geometry"""
 
-bg = BaseGeometry()
 
-try:
-    print(bg.area())
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
+class BaseGeometry:
+    """creating an empty class geometry"""
+    def area(self):
+        """raises an exception"""
+        raise Exception('area() is not implemented')
