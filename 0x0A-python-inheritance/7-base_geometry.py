@@ -1,23 +1,18 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+"""creating an empty class geometry"""
 
-bg = BaseGeometry()
 
-bg.integer_validator("my_int", 12)
-bg.integer_validator("width", 89)
+class BaseGeometry:
+    """creating an empty class geometry"""
+    def area(self):
+        """raises an exception"""
+        raise Exception('area() is not implemented')
 
-try:
-    bg.integer_validator("name", "John")
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    bg.integer_validator("age", 0)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    bg.integer_validator("distance", -4)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
+    def integer_validator(self, name, value):
+        """validates the value"""
+        if not isinstance(value, int):
+            raise TypeError('<name> must be an integer')
+        if value <= 0:
+            raise ValueError('<name> must be greater than 0')
+        self.name = name
+        self.value = value
