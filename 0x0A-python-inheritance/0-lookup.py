@@ -2,4 +2,5 @@
 """returns a list of attr and methods"""
 
 def lookup(obj):
-    print(getattr())
+    """returns a list of attr and methods"""
+    print(dir(lookup))
