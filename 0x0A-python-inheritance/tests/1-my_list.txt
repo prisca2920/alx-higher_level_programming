@@ -1,0 +1,40 @@
+"""testing a list of type int"""
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+# a list with integers
+>>> my_list.append(2)
+>>> my_list.append(5)
+>>> my_list.append(7)
+>>> my_list.append(8)
+>>> my_list.append(1)
+>>> print(my_list)
+[2, 5, 7, 8, 1]
+>>> my_list.print_sorted()
+[1, 2, 5, 7, 8]
+
+# an empty list
+>>> b = []
+>>> my_list = MyList(b)
+>>> my_list.print_sorted()
+[]
+
+
+# one number
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[5]
+>>> print(my_list)
+[5]
+
+#mixed numbers
+>>> my_list = MyList()
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(-2)
+>>> my_list.append(98)
+>>> my_list.append(-5)
+>>> my_list.print_sorted()
+[-5, -2, 2, 4, 98]
