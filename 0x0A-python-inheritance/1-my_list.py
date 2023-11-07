@@ -5,4 +5,5 @@
 class Mylist(list):
     """inherits from list"""
     def print_sorted(self):
-        return list.sort()
+        """printing a sorted list"""
+        print(sorted(self))
