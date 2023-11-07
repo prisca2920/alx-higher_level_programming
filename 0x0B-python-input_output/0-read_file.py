@@ -4,6 +4,6 @@
 
 def read_file(filename=""):
     """a func that reads a text file"""
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         text = f.read()
         return text
