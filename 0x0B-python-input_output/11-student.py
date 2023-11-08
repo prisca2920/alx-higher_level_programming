@@ -21,4 +21,3 @@ class Student:
         """replace all attr of the student"""
         for i, j in json.items():
             setattr(self, i, j)
-
