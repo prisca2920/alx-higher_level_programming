@@ -27,7 +27,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """updating args and key word arguments"""
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             attrs = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
                 if attrs[i] == 'size'

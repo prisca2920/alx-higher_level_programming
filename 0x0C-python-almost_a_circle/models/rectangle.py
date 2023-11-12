@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """creating a class rect"""
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -78,7 +79,7 @@ class Rectangle(Base):
                 print('')
             for i in range(self.__height):
                 for x in range(self.__x):
-                    print(' ', end ='')
+                    print(' ', end='')
                 for j in range(self.__width):
                     print('#', end='')
                 print()
@@ -86,11 +87,11 @@ class Rectangle(Base):
         def __str__(self):
             """returns a string representation"""
             return f"[Rectangle] ({self.__id}) {self.__x}/{self.__y} - \
-                    {self.__width}}/{self.__height}"
+                    {self.__width}/{self.__height}"
 
         def update(self, *args, **kwargs):
             """assigns args to each attr"""
-            if args != None and len(args) != 0:
+            if args is not None and len(args) != 0:
                 attrs = ['id', 'width', 'height', 'x', 'y']
                 for i in range(len(args)):
                     setattr(self, attrs[i], args[i])
@@ -108,5 +109,3 @@ class Rectangle(Base):
                 dict1[key] = getattr(self, key)
 
             return dict1
-
-
