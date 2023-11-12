@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """creating a class sq"""
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -30,11 +31,11 @@ class Square(Rectangle):
         if args is not None and len(args) != 0:
             attrs = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
-                if attrs[i] == 'size'
-                setattr(self, 'width', args[i])
-                setattr(self, 'height', args[i])
-            else:
-                setattr(self, attr[i], args[i])
+                if attrs[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, attr[i], args[i])
 
         else:
             for key, value in kwargs.items():
