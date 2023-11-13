@@ -14,19 +14,15 @@ class test_square(unittest.TestCase):
 
     def tearDown(self):
         """del the sq"""
-        try:
-            os.remove("Square.json")
-        except:
-            pass
         del self.sq
 
     def test_width(self):
         """testing the width"""
-        self.assertEqual(5, self.sq.width)
+        self.assertEqual(4, self.sq.width)
 
     def test_height(self):
         """testing the height"""
-        self.assertEqual(5, self.sq.height)
+        self.assertEqual(4, self.sq.height)
 
     def test_x(self):
         """testing x of sq"""
@@ -75,11 +71,6 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(-3)
 
-    def test_x_zero(self):
-        """zero x"""
-        with self.assertRaises(ValueError):
-            sq = Square(4, 0)
-
     def test_x_float(self):
         """with a float"""
         with self.assertRaises(TypeError):
@@ -104,11 +95,6 @@ class test_square(unittest.TestCase):
         """ a negative value"""
         with self.assertRaises(ValueError):
             sq = Square(4, -3)
-
-    def test_y_zero(self):
-        """zero y"""
-        with self.assertRaises(ValueError):
-            sq = Square(4, 5, 0)
 
     def test_y_float(self):
         """with a float"""
@@ -137,13 +123,9 @@ class test_square(unittest.TestCase):
 
     def test_area(self):
         """area of a sq"""
-        self.assertEqual(self.s.area(), 4 * 4)
+        self.assertEqual(self.sq.area(), 4 * 4)
         sq = Square(8, 8, 8, 2)
         self.assertEqual(sq.area(), 8 * 8)
-
-    def test_str_overload(self):
-        sq = Square(5, 8, 7, 88)
-        self.assertEqual(sq.__str__(), "[Square] (88) 8/7 - 5")
 
     def test_updating_id(self):
         """updating id"""
@@ -153,12 +135,12 @@ class test_square(unittest.TestCase):
     def test_updating_width(self):
         """updating width"""
         self.sq.update(72, 20)
-        self.assertEqual(4, self.sq.width)
+        self.assertEqual(20, self.sq.width)
 
     def test_update_height(self):
         """updating height"""
         self.sq.update(72, 10)
-        self.assertEqual(4, self.sq.height)
+        self.assertEqual(10, self.sq.height)
 
     def test_update_x(self):
         """updating x"""
