@@ -7,9 +7,7 @@ class Square(Rectangle):
     """creating a class sq"""
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the class"""
-        super().__init__(id, x, y, size, size)
-        self.width = size
-        self.height = size
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """returns the str representation"""
@@ -35,7 +33,7 @@ class Square(Rectangle):
                     setattr(self, 'width', args[i])
                     setattr(self, 'height', args[i])
                 else:
-                    setattr(self, attr[i], args[i])
+                    setattr(self, attrs[i], args[i])
 
         else:
             for key, value in kwargs.items():
