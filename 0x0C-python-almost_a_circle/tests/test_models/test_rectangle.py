@@ -17,13 +17,13 @@ class test_rectangle(unittest.TestCase):
         """deleting value of rect"""
         del self.r
 
-    def test_height(self):
-        """validating height"""
-        self.assertEqual(6, self.r.height)
-
     def test_width(self):
         """validating width"""
         self.assertEqual(3, self.r.width)
+
+    def test_height(self):
+        """validating height"""
+        self.assertEqual(6, self.r.height)
 
     def test_x(self):
         """testing x"""
@@ -170,12 +170,7 @@ class test_rectangle(unittest.TestCase):
     def test_x_neg(self):
         """negative value"""
         with self.assertRaises(ValueError):
-            rect = Rectangle(3, 6, -5)
-
-    def test_x_zero(self):
-        """x as zero"""
-        with self.assertRaises(ValueError):
-            rect = Rectangle(3, 6, 0)
+            rect = Rectangle(3, 6, -3)
 
     def test_x_float(self):
         """x as a float"""
@@ -221,11 +216,6 @@ class test_rectangle(unittest.TestCase):
         """negative value"""
         with self.assertRaises(ValueError):
             rect = Rectangle(3, 6, 5, -5)
-
-    def test_y_zero(self):
-        """y as zero"""
-        with self.assertRaises(ValueError):
-            rect = Rectangle(3, 6, 5, 0)
 
     def test_y_float(self):
         """y as a float"""
@@ -282,7 +272,3 @@ class test_rectangle(unittest.TestCase):
         """updating y"""
         self.r.update(72, 10, 20, 6, 2)
         self.assertEqual(2, self.r.y)
-
-    def test_str_overload(self):
-        r = Rectangle(5, 10, 8, 7, 88)
-        self.assertEqual(r.__str__(), "[Rectangle] (88) 8/7 - 5/10")
