@@ -63,3 +63,39 @@ class Base:
             obj = Base.from_json_string(file.read())
         list = [cls.create(**dict) for dict in obj]
         return list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draws a rect n sq in turtle mode"""
+        t = turtle.Turtle()
+        t.screen.bgcolor("#b7312c")
+        t.pensize(3)
+        t.shape("turtle")
+
+        t.color("#ffffff")
+        for rect in list_rectangles:
+            t.showturtle()
+            t.up()
+            t.goto(rect.x, rect.y)
+            t.down()
+            for i in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
+            t.hideturtle()
+
+        t.color("#b5e3d8")
+        for sq in list_squares:
+            t.showturtle()
+            t.up()
+            t.goto(sq.x, sq.y)
+            t.down()
+            for i in range(2):
+                t.forward(sq.width)
+                t.left(90)
+                t.forward(sq.height)
+                t.left(90)
+            t.hideturtle()
+
+        t.exitonclick()
