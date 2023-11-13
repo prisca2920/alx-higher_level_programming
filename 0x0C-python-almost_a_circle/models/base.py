@@ -2,6 +2,8 @@
 """creating class Base"""
 import json
 from os import path
+import csv
+import turtle
 
 
 class Base:
@@ -22,3 +24,42 @@ class Base:
         if list_dictionaries is None:
             return '[]'
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the json rep to a file"""
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                dicts = [i.to_dictionary() for i in list_objs]
+                f.write(Base.to_json_string(dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of json str rep"""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attr"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(10, 10)
+        elif cls.__name__ == 'Square':
+            dummy = cls(10)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        if not path.exists(filename):
+            return []
+        with open(filename, "r") as file:
+            obj = Base.from_json_string(file.read())
+        list = [cls.create(**dict) for dict in obj]
+        return list
