@@ -42,13 +42,13 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns the dict rep of sq"""
-        atrs = ['id', 'size', 'x', 'y']
+        attrs = ['id', 'size', 'x', 'y']
         dict2 = {}
 
         for key in attrs:
             if key == 'size':
-                dict2[key] = getattr(self, key)
+                dict2[key] = getattr(self, 'width')
             else:
-                dict2 = getattr(self, key)
+                dict2[key] = getattr(self, key)
 
         return dict2
