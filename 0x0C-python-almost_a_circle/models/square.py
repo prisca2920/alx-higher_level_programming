@@ -31,22 +31,14 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """updating args and key word arguments"""
-        if args is not None and len(args) != 0:
-            attrs = ['id', 'size', 'x', 'y']
+        attrs = ['id', 'size', 'x', 'y']
+        if len(args) != 0:
             for i in range(len(args)):
-                if attrs[i] == 'size':
-                    setattr(self, 'width', args[i])
-                    setattr(self, 'height', args[i])
-                else:
-                    setattr(self, attrs[i], args[i])
+                setattr(self, attrs[i], args[i])
 
-        else:
+        elif len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key == 'size':
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
-                else:
-                    setattr(self, key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """returns the dict rep of sq"""
