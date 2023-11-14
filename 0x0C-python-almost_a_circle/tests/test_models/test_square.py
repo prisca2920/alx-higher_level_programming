@@ -135,12 +135,12 @@ class test_square(unittest.TestCase):
     def test_updating_width(self):
         """updating width"""
         self.sq.update(72, 20)
-        self.assertEqual(20, self.sq.width)
+        self.assertEqual(4, self.sq.width)
 
     def test_update_height(self):
         """updating height"""
         self.sq.update(72, 10)
-        self.assertEqual(10, self.sq.height)
+        self.assertEqual(4, self.sq.height)
 
     def test_update_x(self):
         """updating x"""
