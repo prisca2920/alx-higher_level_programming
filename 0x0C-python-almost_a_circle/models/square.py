@@ -8,10 +8,11 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the class"""
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         """returns the str representation"""
-        return f"[Square] ({self.__id}) {self.__x}/{self.__y} - {self.__size}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def size(self):
