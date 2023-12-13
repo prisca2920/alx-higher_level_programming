@@ -1,3 +1,3 @@
 -- prints the full description
 -- from the database
-SELECT first_table;
+SHOW TABLE first_table;
