@@ -1,4 +1,4 @@
---displays the no of records
+-- displays the no of records
 -- with 89 as id
 SELECT COUNT *
 FROM first_table
