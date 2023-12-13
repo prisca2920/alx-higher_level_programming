@@ -1,5 +1,5 @@
 -- displays the no of records
 -- with 89 as id
-SELECT COUNT *
+SELECT COUNT (*)
 FROM first_table
 WHERE id = 89;
