@@ -21,3 +21,6 @@ if __name__ == "__main__":
 
     fow row in rows:
         print(row)
+
+    connect.close()
+    db.close()
