@@ -13,14 +13,14 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    connect = db.cursor()
-    connect.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+    conn = db.cursor()
+    conn.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
             ORDER BY states.id ASC")
 
-    rows = connect.fetchall()
+    rows = conn.fetchall()
 
     fow row in rows:
         print(row)
 
-    connect.close()
+    conn.close()
     db.close()
