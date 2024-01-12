@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     rows = conn.fetchall()
 
-    fow row in rows:
+    for row in rows:
         print(row)
 
     conn.close()
