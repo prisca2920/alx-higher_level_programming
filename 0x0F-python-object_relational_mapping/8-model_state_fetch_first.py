@@ -14,7 +14,7 @@ if __name__ == '__main__':
     )
 
     session_maker = sessionmaker(bind=engine)
-    session = sessionmaker()
+    session = session_maker()
 
     states = session.query(State).order_by(State.id).first()
 
