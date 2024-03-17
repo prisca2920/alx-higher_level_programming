@@ -15,5 +15,5 @@ if __name__ == '__main__':
 
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+    if rows is not None:
+        print(", ".join([row[1] for row in rows]))
