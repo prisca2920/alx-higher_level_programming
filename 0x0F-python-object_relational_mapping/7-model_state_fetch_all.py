@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """fetching all states"""
-from model_state - from model_state import Base, State
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
@@ -17,5 +17,5 @@ if __name__ == '__main__':
 
     states = session.query(State).order_by(State.id).all()
 
-    fpr state in states:
+    for state in states:
         print("{}: {}".format(state.id, state.name))
